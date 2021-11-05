@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+button {
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .box {
+    display: flex;
+  }
+}
