@@ -52,8 +52,6 @@ function App() {
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
-  //Responsável por filtrar (use o método filter) e mostrar apenas os produtos com o mesmo texto escrito no input.
   const showProducts = (item) => {
     setFilteredProducts(products.filter((filter) => filter.name === item));
   };
