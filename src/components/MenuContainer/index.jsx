@@ -3,11 +3,8 @@ import "./menu.css";
 const MenuContainer = ({ products, handleClick, filteredProducts }) => {
   return (
     <div className="produtos">
-      {filteredProducts.length === 0
-        ? products.map((item, i) => (
-            <Product item={item} key={i} handleClick={handleClick} />
-          ))
-        : filteredProducts.map((item, i) => (
+      {filteredProducts.length > 0 
+        && filteredProducts.map((item, i) => (
             <Product item={item} key={i} handleClick={handleClick} />
           ))}
     </div>

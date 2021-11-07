@@ -13,6 +13,7 @@ function Header({ showProducts }) {
           placeholder="pesquisar"
           onChange={(event) => {
             setInput(event.target.value);
+            showProducts(input);
           }}
         ></input>
         {console.log(input)}

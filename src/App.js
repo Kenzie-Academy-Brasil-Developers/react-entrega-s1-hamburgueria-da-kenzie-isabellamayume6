@@ -1,11 +1,11 @@
-import { useReducer, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import MenuContainer from "./components/MenuContainer";
 import ShoppingCart from "./components/shoppingCart";
 import Header from "./components/Header";
 import toast, { Toaster } from "react-hot-toast";
 function App() {
-  const [products, setProducts] = useState([
+  const [products] = useState([
     {
       id: 1,
       name: "Hamburguer",
@@ -50,10 +50,18 @@ function App() {
     },
   ]);
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([...products]);
   const [currentSale, setCurrentSale] = useState([]);
   const showProducts = (item) => {
-    setFilteredProducts(products.filter((filter) => filter.name === item));
+    if (item === "") {
+      setFilteredProducts([...products]);
+    } else {
+      setFilteredProducts(
+        products.filter((filter) =>
+          filter.name.toLowerCase().includes(item.toLowerCase())
+        )
+      );
+    }
   };
   function removerTudo() {
     setCurrentSale([]);

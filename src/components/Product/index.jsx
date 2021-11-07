@@ -3,7 +3,7 @@ const Product = ({ item, handleClick }) => {
   return (
     <div className="Card">
       <div className="img-Card">
-        <img src={item.img}></img>
+        <img src={item.img} alt=""></img>
       </div>
       <div className="info-Card">
         <h3>{item.name}</h3>
